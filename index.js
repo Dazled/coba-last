@@ -14,9 +14,12 @@ app.use(express.urlencoded({ extended: false }));
 // Serve static files from the 'public' directory
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use('/api', apiRouter);
 
-
-
+// Add a route for the root path
+app.get('/', (req, res) => {
+    res.send('Welcome to the API!');
+});
 
 // Start the server
 const PORT = process.env.PORT || 8080;
