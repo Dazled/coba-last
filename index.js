@@ -14,8 +14,7 @@ app.use(express.urlencoded({ extended: false }));
 // Serve static files from the 'public' directory
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Use the API router for routes starting with '/api'
-app.use('/api', apiRouter);
+
 
 
 
