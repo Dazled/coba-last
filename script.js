@@ -624,7 +624,7 @@ function handleSubmit(event) {
 
 // Load Provinsi
 function loadProvinsi() {
-  fetch("https://coba-last-production.up.railway.app/provinsi")
+  fetch("https://coba-last-production.up.railway.app/api/provinsi")
     .then((res) => res.json())
     .then((data) => {
       let options =
@@ -640,7 +640,7 @@ function loadProvinsi() {
 
 // Load Kota berdasarkan Provinsi
 function loadKota(provId, el) {
-  fetch(`https://coba-last-production.up.railway.app/kota/${provId}`)
+  fetch(`https://coba-last-production.up.railway.app/api/kota/${provId}`)
     .then((res) => res.json())
     .then((data) => {
       let options =
@@ -662,7 +662,7 @@ function cekOngkir() {
 
   if (asal && tujuan && berat && kurir) {
     fetch(
-      `https://coba-last-production.up.railway.app/ongkos/${asal}/${tujuan}/${berat}/${kurir}`
+      `https://coba-last-production.up.railway.app/api/ongkos/${asal}/${tujuan}/${berat}/${kurir}`
     )
       .then((res) => res.json())
       .then((data) => {
